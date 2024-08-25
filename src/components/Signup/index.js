@@ -19,7 +19,7 @@ class Signup extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const data = {username, password}
-    const url = 'https://ecomersebackend-7.onrender.com/users/'
+    const url = 'https://zuai-backend-blog-111.onrender.com/users/'
 
     try {
       const response = await fetch(url, {

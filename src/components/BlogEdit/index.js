@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class ProductsEdit extends Component {
+class BlogEdit extends Component {
   componentDidMount() {
     this.getdata()
   }
@@ -10,7 +10,7 @@ class ProductsEdit extends Component {
     const {params} = match
     const {id} = params
 
-    const url = 'https://ecomersebackend-7.onrender.com/deleteproduct/'
+    const url = 'https://zuai-backend-blog-111.onrender.com/deleteblog/'
     const options = {
       method: 'POST',
       headers: {
@@ -21,18 +21,17 @@ class ProductsEdit extends Component {
     const response = await fetch(url, options)
     console.log(response)
     const ondata = await response.json()
-  
-    
+
     console.log(ondata)
   }
 
   render() {
     return (
       <div>
-        <h1>product delated sucesufully</h1>
+        <h1>blog delated sucesufully</h1>
       </div>
     )
   }
 }
 
-export default ProductsEdit
+export default BlogEdit

@@ -19,7 +19,7 @@ class Login extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const data = {username, password}
-    const url = 'https://ecomersebackend-7.onrender.com/login/'
+    const url = 'https://zuai-backend-blog-111.onrender.com/login/'
     const options = {
       method: 'POST',
       headers: {

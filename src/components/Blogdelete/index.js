@@ -1,24 +1,21 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
-class Productdelete extends Component {
+class Blogdelete extends Component {
   state = {livedata: []}
 
   componentDidMount() {
     this.getdata()
   }
   getdata = async () => {
-    const url = 'https://ecomersebackend-7.onrender.com/products/'
+    const url = 'https://zuai-backend-blog-111.onrender.com/blogs/'
     const response = await fetch(url)
     //console.log(response)
     const data = await response.json()
     console.log(data)
     const odata = data.data.map(each => ({
-      id: each.productid,
-      name: each.productname,
-      img: each.productimg,
-      descrption: each.productdescription,
-      price: each.productimg,
-      brand: each.productbrand,
+      id: each.blogtid,
+      name: each.blogname,
+      descrption: each.blogdescription,
     }))
 
     //console.log(odata)
@@ -44,4 +41,4 @@ class Productdelete extends Component {
     )
   }
 }
-export default Productdelete
+export default Blogdelete

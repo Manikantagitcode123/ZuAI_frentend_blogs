@@ -2,16 +2,16 @@ import './App.css'
 //import React from "react"
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 //import { BrowserRouter ,Switch, Route } from 'react-router-dom';
-import ProductList from './components/ProductList'
-import Products from './components/Products'
-import SingleProduct from './components/SingleProduct'
+import BlogsList from './components/BlogsList'
+import Blogsadd from './components/Blogsadd'
+import SingleProduct from './components/Singleblog'
 import Signup from './components/Signup'
 import Login from './components/Login'
-import ProductsEdit from './components/ProductsEdit'
-import Productdelete from './components/productdelete'
+import BlogEdit from './components/BlogEdit'
+import Blogdelete from './components/Blogdelete'
 //import NotFound from "./components/NotFound"
 import Home from './components/Home'
-import Cart from './components/Cart'
+
 import ProtectedRoute from './components/ProtectedRoute'
 const App = () => (
   <BrowserRouter>
@@ -20,17 +20,12 @@ const App = () => (
 
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/login" component={Login} />
-      <ProtectedRoute exact path="/products" component={ProductList} />
-      <ProtectedRoute exact path="/productadd" component={Products} />
-      <ProtectedRoute eaxct path="/productdelete" component={Productdelete} />
-      <ProtectedRoute eaxct path="/ProductsEdit/:id" component={ProductsEdit} />
-      <ProtectedRoute exact path="Cart" component={Cart} />
+      <ProtectedRoute exact path="/blogs" component={BlogsList} />
+      <ProtectedRoute exact path="/blogadd" component={Blogsadd} />
+      <ProtectedRoute eaxct path="/blogdelete" component={Blogdelete} />
+      <ProtectedRoute eaxct path="/blogEdit/:id" component={BlogEdit} />
 
-      <ProtectedRoute
-        exact
-        path="/singleproduct/:id"
-        component={SingleProduct}
-      />
+      <ProtectedRoute exact path="/singleblog/:id" component={SingleProduct} />
     </Switch>
   </BrowserRouter>
 )

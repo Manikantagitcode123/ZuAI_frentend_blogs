@@ -1,24 +1,21 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
-class ProductList extends Component {
+class BlogsList extends Component {
   state = {livedata: []}
 
   componentDidMount() {
     this.getdata()
   }
   getdata = async () => {
-    const url = 'https://ecomersebackend-7.onrender.com/products/'
+    const url = 'https://zuai-backend-blog-111.onrender.com/blogs/'
     const response = await fetch(url)
     //console.log(response)
     const data = await response.json()
     console.log(data)
     const odata = data.data.map(each => ({
-      id: each.productid,
-      name: each.productname,
-      img: each.productimg,
-      descrption: each.productdescription,
-      price: each.productimg,
-      brand: each.productbrand,
+      id: each.blogtid,
+      name: each.blogname,
+      descrption: each.blogdescription,
     }))
 
     //console.log(odata)
@@ -31,7 +28,7 @@ class ProductList extends Component {
 
     return (
       <div>
-        <h1>ProductList</h1>
+        <h1>blogList</h1>
         {livedata.map(each => (
           <Link to={`/singleproduct/${each.id}`}>
             <h2>{each.name}</h2>
@@ -41,4 +38,4 @@ class ProductList extends Component {
     )
   }
 }
-export default ProductList
+export default BlogsList
